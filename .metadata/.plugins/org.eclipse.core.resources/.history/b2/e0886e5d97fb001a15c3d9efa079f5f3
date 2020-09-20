@@ -1,0 +1,56 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Resultado</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<%
+		String primeiroValue = request.getParameter("primeiroValue");
+	String segundoValue = request.getParameter("segundoValue");
+	String operacao = request.getParameter("operacao");
+	String resultado = request.getAttribute("resultado").toString();
+	String contador = request.getAttribute("contador").toString();
+	%>
+	<div class="d-flex flex-column align-items-center col-xs-8">
+		<div class="container w-50 p-3">
+			<h1 class="p-3 text-center">Resultado</h1>
+			<div class="p-3 mb-2 bg-dark text-white d-flex flex-column" style="width:352px;">
+				<div class="row justify-content-end p-3">
+					<%
+						out.print(primeiroValue);
+					%>
+					<%
+						out.print(operacao);
+					%>
+					<%
+						out.print(segundoValue);
+					%>
+				</div>
+				<div class="row justify-content-end p-3"><h3>
+					<%
+						out.print(resultado);
+					%></h3>
+				</div>
+			</div>
+
+
+			<button class="btn btn-info btn-block mb-3 p-3" onclick="history.back()" style="width:352px;">Voltar</button>
+			<div class="shadow-none p-3 mb-5 bg-light rounded text-center" style="width:352px;">
+				Você já esteve aqui
+				<%
+				out.print(contador);
+			%>
+				vezes.
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
