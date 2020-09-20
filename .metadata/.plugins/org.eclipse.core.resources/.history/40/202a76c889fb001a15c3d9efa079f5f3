@@ -14,7 +14,6 @@
 	String resultado = request.getAttribute("resultado").toString();
 	String contador = request.getAttribute("contador").toString();
 	%>
-	
 	<h1>Resultado do cálculo</h1>
 	<form>
 		Conta realizada:

@@ -7,21 +7,28 @@
 <title>Calculadora Resultado</title>
 </head>
 <body>
-<% 
-	String primeiroValue = request.getParameter("primeiroValue");
+	<%
+		String primeiroValue = request.getParameter("primeiroValue");
 	String segundoValue = request.getParameter("segundoValue");
 	String operacao = request.getParameter("operacao");
 	String resultado = request.getAttribute("resultado").toString();
-	// String totalVisitantes = request.getAttribute("contador").toString();
-%>
-	   <h1>Resultado do cálculo</h1>
-        <form>
-        	Conta realizada: <% out.print(primeiroValue); %> <% out.print(operacao); %> <% out.print(segundoValue); %>
-            Resultado: <% out.print(resultado); %> <br>
-         <!--     Visitas:  out.print(totalVisitantes); %> -->
-        </form>
-        
-         <input type="button" value="Retornar" onclick="history.back()"><br>
+	String contador = request.getAttribute("contador").toString();
+	%>
+	
+	<h1>Resultado do cálculo</h1>
+	<form>
+		Conta realizada:
+		<% out.print(primeiroValue);%>
+		<% out.print(operacao); %>
+		<% out.print(segundoValue); %>
+		
+		Resultado:
+		<% out.print(resultado); %>
+		<br> Visitas: <% out.print(contador); %>
+	</form>
+
+	<input type="button" value="Retornar" onclick="history.back()">
+	<br>
 
 </body>
 </html>

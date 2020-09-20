@@ -12,3 +12,4 @@
 0:0:0:0:0:0:0:1 - - [20/Sep/2020:18:34:18 -0300] "GET /Calculadora/CalculadoraServlet?primeiroValue=6&segundoValue=2&operacao=mul HTTP/1.1" 200 428
 0:0:0:0:0:0:0:1 - - [20/Sep/2020:18:34:22 -0300] "GET /Calculadora/CalculadoraServlet?primeiroValue=6&segundoValue=2&operacao=sub HTTP/1.1" 200 427
 0:0:0:0:0:0:0:1 - - [20/Sep/2020:18:34:24 -0300] "GET /Calculadora/CalculadoraServlet?primeiroValue=6&segundoValue=2&operacao=div HTTP/1.1" 200 427
+127.0.0.1 - - [20/Sep/2020:18:39:43 -0300] "GET / HTTP/1.1" 404 763

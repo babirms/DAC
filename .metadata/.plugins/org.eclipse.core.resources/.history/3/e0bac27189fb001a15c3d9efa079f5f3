@@ -49,11 +49,11 @@ public class CalculadoraServlet extends HttpServlet {
 		int contador = 1;
 		
 		// atualiza o contador de visitas de acordo com os cookies lidos 
-		Cookie cookies[] = request.getCookies(); 
+		Cookie cookie[] = request.getCookies(); 
 		
-		for (int i = 0; i < cookies.length; i++){  
-			if(cookies[i].getName().equals("contador")) {
-				contador = Integer.parseInt(cookies[i].getValue()) + 1;
+		for (int i = 0; i < cookie.length; i++){  
+			if(cookie[i].getName().equals("contador")) {
+				contador = Integer.parseInt(cookie[i].getValue()) + 1;
 			}
 		}
 		

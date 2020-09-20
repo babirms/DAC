@@ -46,19 +46,19 @@ public class CalculadoraServlet extends HttpServlet {
 		}
 		
 		// inicializa o contador de visitas
-		int contador = 1;
+		int count = 1;
 		
 		// atualiza o contador de visitas de acordo com os cookies lidos 
 		Cookie cookies[] = request.getCookies(); 
 		
 		for (int i = 0; i < cookies.length; i++){  
-			if(cookies[i].getName().equals("contador")) {
-				contador = Integer.parseInt(cookies[i].getValue()) + 1;
+			if(cookies[i].getName().equals("count")) {
+				count = Integer.parseInt(cookies[i].getValue()) + 1;
 			}
 		}
 		
 		// cria um novo objeto Cookie com o valor final de 'contador'		
-		Cookie cookieResult = new Cookie("contador", String.valueOf(contador));
+		Cookie cookieResult = new Cookie("contador", String.valueOf(count));
 		
 		// add o cooki ao header HTTP
 		response.addCookie(cookieResult);
