@@ -1,0 +1,14 @@
+127.0.0.1 - - [20/Sep/2020:18:30:47 -0300] "GET / HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [20/Sep/2020:18:30:48 -0300] "GET /Calculadora/ HTTP/1.1" 404 779
+0:0:0:0:0:0:0:1 - - [20/Sep/2020:18:31:02 -0300] "GET /Calculadora/home.html HTTP/1.1" 200 631
+0:0:0:0:0:0:0:1 - - [20/Sep/2020:18:31:07 -0300] "GET /Calculadora/CalculadoraServlet?primeiroValue=20&segundoValue=2&operacao=soma HTTP/1.1" 500 1263
+127.0.0.1 - - [20/Sep/2020:18:32:03 -0300] "GET / HTTP/1.1" 404 763
+127.0.0.1 - - [20/Sep/2020:18:32:42 -0300] "GET / HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [20/Sep/2020:18:32:42 -0300] "GET /Calculadora/ HTTP/1.1" 404 779
+0:0:0:0:0:0:0:1 - - [20/Sep/2020:18:32:48 -0300] "GET /Calculadora/CalculadoraServlet?primeiroValue=13&segundoValue=2&operacao=soma HTTP/1.1" 404 755
+127.0.0.1 - - [20/Sep/2020:18:33:11 -0300] "GET / HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [20/Sep/2020:18:34:05 -0300] "GET /Calculadora/home.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [20/Sep/2020:18:34:12 -0300] "GET /Calculadora/CalculadoraServlet?primeiroValue=6&segundoValue=2&operacao=soma HTTP/1.1" 200 428
+0:0:0:0:0:0:0:1 - - [20/Sep/2020:18:34:18 -0300] "GET /Calculadora/CalculadoraServlet?primeiroValue=6&segundoValue=2&operacao=mul HTTP/1.1" 200 428
+0:0:0:0:0:0:0:1 - - [20/Sep/2020:18:34:22 -0300] "GET /Calculadora/CalculadoraServlet?primeiroValue=6&segundoValue=2&operacao=sub HTTP/1.1" 200 427
+0:0:0:0:0:0:0:1 - - [20/Sep/2020:18:34:24 -0300] "GET /Calculadora/CalculadoraServlet?primeiroValue=6&segundoValue=2&operacao=div HTTP/1.1" 200 427

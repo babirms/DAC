@@ -49,7 +49,7 @@ public class CalculadoraServlet extends HttpServlet {
 		int contador = 1;
 		
 		// atualiza o contador de visitas de acordo com os cookies lidos 
-		Cookie cookie[] = request.getCookies(); 
+		/*Cookie cookie[] = request.getCookies(); 
 		
 		for(int i=0;i<cookie.length;i++){  
 			if(cookie[i].getName().equals("contador")) {
@@ -61,14 +61,14 @@ public class CalculadoraServlet extends HttpServlet {
 		Cookie cookieResult = new Cookie("contador", String.valueOf(contador));
 		
 		// add o cooki ao header HTTP
-		response.addCookie(cookieResult);
+		response.addCookie(cookieResult);*/
 		
 		// define as variáveis (e valores) que serão exibidos no JSP
 		request.setAttribute("resultado", resultado);
 		request.setAttribute("contador", contador);
 	
 		// envia as resources para o jsp
-		request.getRequestDispatcher("./resultado.jsp").forward(request, response);
+		request.getRequestDispatcher("./Calculadora.jsp").forward(request, response);
 
 	}
 
