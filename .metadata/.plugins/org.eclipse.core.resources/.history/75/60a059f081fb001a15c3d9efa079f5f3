@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculadora</title>
+</head>
+<body>
+	<form action="CalculadoraServlet" method="get">
+		<label>Primeiro número: </label> <input type="text" name="ValorA">
+		<br> <label>Segundo número: </label> <input type="text"
+			name="ValorB"> <br> <label>Operador: </label> <select
+			name="opcao">
+			<option value="+">(+)</option>
+			<option value="-">(-)</option>
+			<option value="*">(*)</option>
+			<option value="/">(/)</option>
+		</select> <br> <input type="submit" value="Calcular">
+	</form>
+	
+	   <h1>Resultado do cálculo</h1>
+        <form>
+            Resultado:
+            <input type="text" size="10" value="<%= request.getAttribute("resultado") %>"><br>
+            Visitas:
+            <input type="text" size="10" value="<%= request.getAttribute("visitas") %>"><br>
+        </form>
+
+</body>
+</html>
