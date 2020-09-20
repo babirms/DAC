@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculadora - Página Inicial</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="d-flex flex-column align-items-center col-xs-8">
+		<div class="container p-3" style="width: 352px;">
+			<h1 class="p-3 text-center">Calculadora</h1>
+			<form action="CalculadoraServlet" method="get">
+				<div class="form-group">
+					<label for="primeiroNum">Primeiro número: </label> <input
+						type="number" class="form-control" name="primeiroValue"
+						id="primeiroNum" required>
+				</div>
+				<div class="form-group">
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button"
+							id="dropdownMenuButton" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Selecione a Operação</button>
+							 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<select name="operacao">
+							<option class="dropdown-item" value="+" class="shadow-sm p-3 mb-5 bg-white rounded">(+)</option>
+							<option class="dropdown-item" value="-">(-)</option>
+							<option class="dropdown-item" value="x">(x)</option>
+							<option class="dropdown-item" value="/">(/)</option>
+						</select></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="segundoNum">Segundo número: </label> <input
+						type="number" id="segundoNum" class="form-control"
+						name="segundoValue" required>
+				</div>
+				<button class="btn btn-info btn-block" type="submit">Calcular</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

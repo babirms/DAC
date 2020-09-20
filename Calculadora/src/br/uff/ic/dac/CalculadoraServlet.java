@@ -35,11 +35,11 @@ public class CalculadoraServlet extends HttpServlet {
 		double resultado;
 
 		// realiza as operações da calculadora
-		if (operacao.equals("soma")) {
+		if (operacao.equals("+")) {
 			resultado = primeiroValue + segundoValue;
-		} else if (operacao.equals("sub")) {
+		} else if (operacao.equals("-")) {
 			resultado = primeiroValue - segundoValue;
-		} else if (operacao.equals("mul")) {
+		} else if (operacao.equals("x")) {
 			resultado = primeiroValue * segundoValue;
 		} else {
 			resultado = primeiroValue / segundoValue;
@@ -68,7 +68,7 @@ public class CalculadoraServlet extends HttpServlet {
 		request.setAttribute("contador", contador);
 	
 		// envia as resources para o jsp
-		request.getRequestDispatcher("./Calculadora.jsp").forward(request, response);
+		request.getRequestDispatcher("./Resultado.jsp").forward(request, response);
 
 	}
 
