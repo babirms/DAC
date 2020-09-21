@@ -23,7 +23,7 @@ public class CalculadoraServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
 		// define o tipo de resposta enviada para o cliente
 		response.setContentType("text/html");
 
@@ -44,30 +44,29 @@ public class CalculadoraServlet extends HttpServlet {
 		} else {
 			resultado = primeiroValue / segundoValue;
 		}
-
+		
 		// inicializa o contador de visitas
 		int contador = 1;
-
-		// atualiza o contador de visitas de acordo com os cookies lidos
-		Cookie cookies[] = request.getCookies();
-		if (cookies != null)
-
-			for (int i = 0; i < cookies.length; i++) {
-				if (cookies[i].getName().equals("contador")) {
-					contador = Integer.parseInt(cookies[i].getValue()) + 1;
-				}
+		
+		// atualiza o contador de visitas de acordo com os cookies lidos 
+		Cookie cookies[] = request.getCookies(); 
+		
+		for (int i = 0; i < cookies.length; i++){  
+			if(cookies[i].getName().equals("contador")) {
+				contador = Integer.parseInt(cookies[i].getValue()) + 1;
 			}
-
-		// cria um novo objeto Cookie com o valor final de 'contador'
+		}
+		
+		// cria um novo objeto Cookie com o valor final de 'contador'		
 		Cookie cookieResult = new Cookie("contador", String.valueOf(contador));
-
+		
 		// add o cooki ao header HTTP
 		response.addCookie(cookieResult);
-
+		
 		// define as variáveis (e valores) que serão exibidos no JSP
 		request.setAttribute("resultado", resultado);
 		request.setAttribute("contador", contador);
-
+	
 		// envia as resources para o jsp
 		request.getRequestDispatcher("./Resultado.jsp").forward(request, response);
 

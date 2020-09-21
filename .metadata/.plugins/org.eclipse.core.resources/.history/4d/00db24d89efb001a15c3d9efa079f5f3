@@ -50,13 +50,16 @@ public class CalculadoraServlet extends HttpServlet {
 
 		// atualiza o contador de visitas de acordo com os cookies lidos
 		Cookie cookies[] = request.getCookies();
-		if (cookies != null)
+		if (cookies == null) {
+			break
+		} else {
 
 			for (int i = 0; i < cookies.length; i++) {
 				if (cookies[i].getName().equals("contador")) {
 					contador = Integer.parseInt(cookies[i].getValue()) + 1;
 				}
 			}
+		}
 
 		// cria um novo objeto Cookie com o valor final de 'contador'
 		Cookie cookieResult = new Cookie("contador", String.valueOf(contador));

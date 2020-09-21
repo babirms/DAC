@@ -1,8 +1,6 @@
 INDEX VERSION 1.4+D:\UFF\DAC\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
 2152536230.index
 1979602068.index
-1803595387.index
 493918593.index
 3772550613.index
 3052181231.index
-1650449417.index
