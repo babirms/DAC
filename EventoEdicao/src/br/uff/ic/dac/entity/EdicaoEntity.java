@@ -1,57 +1,85 @@
 package br.uff.ic.dac.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class EdicaoEntity implements Serializable {
 
-	private static final long serialVersionUID = 6483485505450924598L;
-	private String nome;
-	private String sigla;
-	private String area_conc;
-	private String inst_org;
+	private static final long serialVersionUID = -521534362773749203L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int numero;
+	private int ano;
+	private Date data_inicio;
+	private Date data_fim;
+	private String cidade;
+	private String pais;
 
 	public EdicaoEntity() {
 	};
 
-	public EdicaoEntity(String nome, String sigla, String area_conc, String inst_org) {
+	public EdicaoEntity(int numero, int ano, Date data_inicio, Date data_fim, String cidade, String pais) {
 		super();
-		this.nome = nome;
-		this.sigla = sigla;
-		this.area_conc = area_conc;
-		this.inst_org = inst_org;
+		this.numero = numero;
+		this.ano = ano;
+		this.data_inicio = data_inicio;
+		this.data_fim = data_fim;
+		this.cidade = cidade;
+		this.pais = pais;
 	}
 
-	public String getNome() {
-		return nome;
+	public int getNumero() {
+		return numero;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNumero(int numero) {
+		this.numero = numero;
 	}
 
-	public String getSigla() {
-		return sigla;
+	public int getAno() {
+		return ano;
 	}
 
-	public void setSigla(String sigla) {
-		this.sigla = sigla;
+	public void setAno(int ano) {
+		this.ano = ano;
 	}
 
-	public String getArea_conc() {
-		return area_conc;
+	public Date getData_inicio() {
+		return data_inicio;
 	}
 
-	public void setArea_conc(String area_conc) {
-		this.area_conc = area_conc;
+	public void setData_inicio(Date data_inicio) {
+		this.data_inicio = data_inicio;
 	}
 
-	public String getInst_org() {
-		return inst_org;
+	public Date getData_fim() {
+		return data_fim;
 	}
 
-	public void setInst_org(String inst_org) {
-		this.inst_org = inst_org;
+	public void setData_fim(Date data_fim) {
+		this.data_fim = data_fim;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getPais() {
+		return pais;
+	}
+
+	public void setPais(String pais) {
+		this.pais = pais;
 	}
 
 }
