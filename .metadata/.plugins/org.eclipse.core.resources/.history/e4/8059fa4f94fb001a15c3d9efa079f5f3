@@ -1,0 +1,56 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculadora Resultado</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="d-flex flex-column align-items-center col-xs-10">
+		<%
+			String primeiroValue = request.getParameter("primeiroValue");
+		String segundoValue = request.getParameter("segundoValue");
+		String operacao = request.getParameter("operacao");
+		String resultado = request.getAttribute("resultado").toString();
+		String contador = request.getAttribute("contador").toString();
+		%>
+
+		<h1>Resultado</h1>
+		<form>
+			<div class="p-3 mb-2 bg-dark text-white">
+				<div class="row">
+					<%
+						out.print(primeiroValue);
+					%>
+					<%
+						out.print(operacao);
+					%>
+					<%
+						out.print(segundoValue);
+					%>
+				</div>
+				<div class="row">
+					<%
+						out.print(resultado);
+					%>
+				</div>
+			</div>
+		</form>
+
+		<button class="btn btn-info btn-block mb-5 " onclick="history.back()">Voltar</button>
+		<div class="shadow-none p-3 mb-5 bg-light rounded">
+			Você já esteve aqui
+			<%
+			out.print(contador);
+		%>
+			vezes.
+		</div>
+
+	</div>
+
+</body>
+</html>

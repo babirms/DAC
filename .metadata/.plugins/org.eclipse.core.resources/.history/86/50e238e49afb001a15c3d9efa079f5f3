@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculadora - Página Inicial</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<style>
+body {*Default bg, similar to the background's base color*/
+   background-image: url("bootstrap/images/home_bg.png");
+   background-position: right bottom; /*Positioning*/
+   background-repeat: no-repeat; /*Prevent showing multiple background images*/
+}</style>
+</head>
+<body>
+	<div class="d-flex flex-column align-items-center col-xs-8">
+		<div class="container p-3" style="width: 352px;">
+			<h1 class="p-3 text-center">Calculadora</h1>
+			<form action="CalculadoraServlet" method="get">
+				<div class="form-group">
+					<label for="primeiroNum">Primeiro número: </label> <input
+						type="number" class="form-control" name="primeiroValue"
+						id="primeiroNum" required>
+				</div>
+				<div class="form-group">
+					<label for="operacao">Selecione a operação: </label> <select
+						class="form-control" id="operacao" name="operacao">
+						<option value="+">+</option>
+						<option value="-">-</option>
+						<option value="x">x</option>
+						<option value="/">/</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="segundoNum">Segundo número: </label> <input
+						type="number" id="segundoNum" class="form-control"
+						name="segundoValue" required>
+				</div>
+				<button class="btn btn-info btn-block" type="submit">Calcular</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
