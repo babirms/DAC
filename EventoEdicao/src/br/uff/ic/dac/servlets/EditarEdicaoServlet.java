@@ -49,7 +49,7 @@ public class EditarEdicaoServlet extends HttpServlet {
 		edicao.setDataFim(Long.parseLong(request.getParameter("dataFinal")));
 		edicao.setCidadeSede(request.getParameter("cidade"));
 		edicao.setPaisSede(request.getParameter("pais"));
-		edicao.setEvento(eventoDao.buscaEventoPorId(edicao.getEdicaoId()));
+		edicao.setEvento(eventoDao.buscaEventoPorId(edicao.getEvento().getEventoId()));
 
 		dao.merge(edicao);
 
