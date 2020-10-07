@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.uff.ic.dac.dao.EventoDAO;
-import br.uff.ic.dac.entity.EventoEntity;
 
 /**
  * Servlet implementation class RemoverEventoServlet
@@ -55,7 +54,6 @@ public class RemoverEventoServlet extends HttpServlet {
 			RequestDispatcher dispatcher = servcontext.getRequestDispatcher("/OperacaoSucesso.jsp");
 			dispatcher.include(request, response);
 		} else {
-			System.out.println(resposta);
 			RequestDispatcher dispatcher = servcontext.getRequestDispatcher("/OperacaoErro.jsp");
 			dispatcher.include(request, response);
 		}

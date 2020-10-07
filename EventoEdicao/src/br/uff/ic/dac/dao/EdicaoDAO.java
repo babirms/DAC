@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 import br.uff.ic.dac.entity.EdicaoEntity;
+import br.uff.ic.dac.entity.EventoEntity;
 
 public class EdicaoDAO {
 	
@@ -18,10 +19,14 @@ public class EdicaoDAO {
 
 	}
 
-	public String excluiEdicao(long edicao_id) {
+	public String excluiEdicao(int edicao_id) {
 		try {
+			EdicaoEntity edicao = this.buscaEdicaoPorId(edicao_id);
+			em = JPAUtil.getEM();
+			EntityTransaction et = em.getTransaction();
 			et.begin();
-			em.remove(edicao_id);
+			EdicaoEntity edicaoRemove = em.merge(edicao);
+			em.remove(edicaoRemove);
 			et.commit();
 			em.close();
 			return "Edição removida com sucesso.";

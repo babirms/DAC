@@ -8,11 +8,12 @@ import br.uff.ic.dac.entity.EventoEntity;
 public class EventoDAO {
 
 	private EntityManager em;
-	
-	public EventoDAO() {}
+
+	public EventoDAO() {
+	}
 
 	public void salvaEvento(EventoEntity evento) {
-		
+
 		em = JPAUtil.getEM();
 		EntityTransaction et = em.getTransaction();
 		et.begin();
@@ -24,10 +25,12 @@ public class EventoDAO {
 
 	public String excluiEvento(int evento_id) {
 		try {
+			EventoEntity evento = this.buscaEventoPorId(evento_id);
 			em = JPAUtil.getEM();
 			EntityTransaction et = em.getTransaction();
 			et.begin();
-			em.remove(evento_id);
+			EventoEntity eventoRemove = em.merge(evento);
+			em.remove(eventoRemove);
 			et.commit();
 			em.close();
 			return "Evento removido com sucesso.";
