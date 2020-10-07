@@ -7,31 +7,118 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "edicao")
 public class EdicaoEntity implements Serializable {
 
 	private static final long serialVersionUID = -521534362773749203L;
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int edicaoId;
 	private int numero;
 	private int ano;
-	private Date data_inicio;
-	private Date data_fim;
-	private String cidade;
-	private String pais;
+	private Date dataInicio;
+	private Date dataFim;
+	private String cidadeSede;
+	private String paisSede;
+	
+	@ManyToOne
+	private EventoEntity evento;
+	
 
 	public EdicaoEntity() {
 	};
+	
+	
 
-	public EdicaoEntity(int numero, int ano, Date data_inicio, Date data_fim, String cidade, String pais) {
+	public EdicaoEntity(int edicaoId, int numero, int ano, Date dataInicio, Date dataFim, String cidadeSede,
+			String paisSede, EventoEntity evento) {
 		super();
+		this.edicaoId = edicaoId;
 		this.numero = numero;
 		this.ano = ano;
-		this.data_inicio = data_inicio;
-		this.data_fim = data_fim;
-		this.cidade = cidade;
-		this.pais = pais;
+		this.dataInicio = dataInicio;
+		this.dataFim = dataFim;
+		this.cidadeSede = cidadeSede;
+		this.paisSede = paisSede;
+		this.evento = evento;
+	}
+	
+
+	public Date getDataInicio() {
+		return dataInicio;
+	}
+
+
+
+	public void setDataInicio(Date dataInicio) {
+		this.dataInicio = dataInicio;
+	}
+
+
+
+	public Date getDataFim() {
+		return dataFim;
+	}
+
+
+
+	public void setDataFim(Date dataFim) {
+		this.dataFim = dataFim;
+	}
+
+
+
+	public String getCidadeSede() {
+		return cidadeSede;
+	}
+
+
+
+	public void setCidadeSede(String cidadeSede) {
+		this.cidadeSede = cidadeSede;
+	}
+
+
+
+	public String getPaisSede() {
+		return paisSede;
+	}
+
+
+
+	public void setPaisSede(String paisSede) {
+		this.paisSede = paisSede;
+	}
+
+
+
+	public int getEdicaoId() {
+		return edicaoId;
+	}
+
+
+	public void setEdicaoId(int edicaoId) {
+		this.edicaoId = edicaoId;
+	}
+
+
+	public EventoEntity getEvento() {
+		return evento;
+	}
+
+
+	public void setEvento(EventoEntity evento) {
+		this.evento = evento;
+	}
+
+
+	public long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	public int getNumero() {
@@ -48,38 +135,6 @@ public class EdicaoEntity implements Serializable {
 
 	public void setAno(int ano) {
 		this.ano = ano;
-	}
-
-	public Date getData_inicio() {
-		return data_inicio;
-	}
-
-	public void setData_inicio(Date data_inicio) {
-		this.data_inicio = data_inicio;
-	}
-
-	public Date getData_fim() {
-		return data_fim;
-	}
-
-	public void setData_fim(Date data_fim) {
-		this.data_fim = data_fim;
-	}
-
-	public String getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
-
-	public String getPais() {
-		return pais;
-	}
-
-	public void setPais(String pais) {
-		this.pais = pais;
 	}
 
 }

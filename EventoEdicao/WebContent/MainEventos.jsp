@@ -31,7 +31,7 @@
 					<div id="collapseOne" class="collapse"
 						aria-labelledby="headingOne" data-parent="#accordionExample">
 						<div class="card-body">
-							<form action="RegistrarEventoServlet" method="get">
+							<form action="RegistrarEventoServlet"  method="post">
 								<div class="form-group">
 									<label for="nome">Insira o Nome do Evento: </label> <input
 										type="text" class="form-control" name="nome"
@@ -69,7 +69,7 @@
 					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
 						data-parent="#accordionExample">
 						<div class="card-body">	
-						<form action="RemoverEventoServlet" method="get">
+						<form action="RemoverEventoServlet" method="post">
 								<div class="form-group">
 									<label for="idEventoRemover">Insira o id do Evento a ser excluido: </label> <input
 										type="text" class="form-control" name="idEventoRemover"
@@ -91,7 +91,7 @@
 					</div>
 					<div id="collapseThree" class="collapse"
 						aria-labelledby="headingThree" data-parent="#accordionExample">
-						<div class="card-body"><form action="EditarEventoServlet" method="get">
+						<div class="card-body"><form action="EditarEventoServlet" method="post">
 								<div class="form-group">
 									<label for="idEventoEditar">Insira o id do Evento a ser alterado: </label> <input
 										type="text" class="form-control" name="idEventoEditar"

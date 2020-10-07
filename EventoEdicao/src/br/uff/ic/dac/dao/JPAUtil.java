@@ -10,7 +10,7 @@ public class JPAUtil {
 
 	    public static EntityManager getEM(){
 	        if (emUtil == null) {
-	        	emUtil = Persistence.createEntityManagerFactory("EventosPU");
+	        	emUtil = Persistence.createEntityManagerFactory("Eventos-PU");
 	        }
 	        return emUtil.createEntityManager();        
 	    }
@@ -18,5 +18,7 @@ public class JPAUtil {
 	    public static void fechaEmf(){
 	    	emUtil.close();
 	    }
+	    
+	
 
 }

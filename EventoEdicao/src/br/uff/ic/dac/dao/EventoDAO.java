@@ -7,10 +7,14 @@ import br.uff.ic.dac.entity.EventoEntity;
 
 public class EventoDAO {
 
-	private EntityManager em = JPAUtil.getEM();
-	private EntityTransaction et = em.getTransaction();
+	private EntityManager em;
+	
+	public EventoDAO() {}
 
 	public void salvaEvento(EventoEntity evento) {
+		
+		em = JPAUtil.getEM();
+		EntityTransaction et = em.getTransaction();
 		et.begin();
 		em.persist(evento);
 		et.commit();
@@ -18,8 +22,10 @@ public class EventoDAO {
 
 	}
 
-	public String excluiEdicao(long evento_id) {
+	public String excluiEvento(long evento_id) {
 		try {
+			em = JPAUtil.getEM();
+			EntityTransaction et = em.getTransaction();
 			et.begin();
 			em.remove(evento_id);
 			et.commit();
@@ -31,11 +37,15 @@ public class EventoDAO {
 
 	}
 
-	/*public String alteraEvento(EventoEntity eventoNovo) {
+	/*
+	 * public String alteraEvento(EventoEntity eventoNovo) {
+	 * 
+	 * }
+	 */
 
-	}*/
-
-	public EventoEntity buscaEdicaoPorId(long evento_id) {
+	public EventoEntity buscaEventoPorId(int evento_id) {
+		em = JPAUtil.getEM();
+		EntityTransaction et = em.getTransaction();
 		et.begin();
 		EventoEntity evento = em.find(EventoEntity.class, evento_id);
 		et.commit();

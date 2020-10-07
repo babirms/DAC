@@ -35,7 +35,7 @@ public class EdicaoDAO {
 
 	}*/
 
-	public EdicaoEntity buscaEdicaoPorId(long edicao_id) {
+	public EdicaoEntity buscaEdicaoPorId(int edicao_id) {
 		et.begin();
 		EdicaoEntity edicao = em.find(EdicaoEntity.class, edicao_id);
 		et.commit();

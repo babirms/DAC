@@ -30,7 +30,7 @@
 					<div id="collapseOne" class="collapse" aria-labelledby="headingOne"
 						data-parent="#accordionExample">
 						<div class="card-body">
-							<form action="RegistrarEdicaoServlet" method="get">
+							<form action="RegistrarEdicaoServlet" method="post">
 								<div class="form-group">
 									<label for="num">Insira o número da Edição: </label> <input
 										type="number" class="form-control" name="num" id="num"
@@ -76,7 +76,7 @@
 					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
 						data-parent="#accordionExample">
 						<div class="card-body">
-							<form action="RemoverEdicaoServlet" method="get">
+							<form action="RemoverEdicaoServlet" method="post">
 								<div class="form-group">
 									<label for="idEdicaoRemover">Insira o id da Edição a ser removida: </label> <input type="text" class="form-control"
 										name="idEdicaoRemover" id="idEdicaoRemover" required>
@@ -98,7 +98,7 @@
 					<div id="collapseThree" class="collapse"
 						aria-labelledby="headingThree" data-parent="#accordionExample">
 						<div class="card-body">
-							<form action="EditarEdicaoServlet" method="get">
+							<form action="EditarEdicaoServlet" method="post">
 								<div class="form-group">
 									<label for="idEdicaoEditar">Insira o id da Edição a ser
 										alterada: </label> <input type="text" class="form-control"
