@@ -22,7 +22,7 @@ public class EventoDAO {
 
 	}
 
-	public String excluiEvento(long evento_id) {
+	public String excluiEvento(int evento_id) {
 		try {
 			em = JPAUtil.getEM();
 			EntityTransaction et = em.getTransaction();

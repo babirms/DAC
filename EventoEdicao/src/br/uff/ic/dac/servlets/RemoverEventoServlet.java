@@ -55,6 +55,7 @@ public class RemoverEventoServlet extends HttpServlet {
 			RequestDispatcher dispatcher = servcontext.getRequestDispatcher("/OperacaoSucesso.jsp");
 			dispatcher.include(request, response);
 		} else {
+			System.out.println(resposta);
 			RequestDispatcher dispatcher = servcontext.getRequestDispatcher("/OperacaoErro.jsp");
 			dispatcher.include(request, response);
 		}
