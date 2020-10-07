@@ -20,6 +20,8 @@ public class EventoEntity implements Serializable {
 
 	public EventoEntity() {
 	};
+	
+	
 
 	public EventoEntity(String nome, String sigla, String area_conc, String inst_org) {
 		super();
@@ -28,6 +30,13 @@ public class EventoEntity implements Serializable {
 		this.area_conc = area_conc;
 		this.inst_org = inst_org;
 	}
+	
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
 
 	public String getNome() {
 		return nome;
