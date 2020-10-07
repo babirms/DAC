@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.uff.ic.dac.dao.EdicaoDAO;
+import br.uff.ic.dac.dao.EventoDAO;
 import br.uff.ic.dac.entity.EdicaoEntity;
+import br.uff.ic.dac.entity.EventoEntity;
 
 /**
  * Servlet implementation class EdiçãoServlet
@@ -49,13 +51,18 @@ public class RegistrarEdiçãoServlet extends HttpServlet {
 
 		EdicaoDAO dao = new EdicaoDAO();
 
+		EventoDAO eventoDao = new EventoDAO();
+
 		EdicaoEntity edicao = new EdicaoEntity();
 		edicao.setNumero(Integer.parseInt(request.getParameter("num")));
 		edicao.setAno(Integer.parseInt(request.getParameter("ano")));
-		edicao.setDataInicio(Date.valueOf(request.getParameter("dataInicio")));
-		edicao.setDataFim(Date.valueOf(request.getParameter("dataFinal")));
+		edicao.setDataInicio(Long.parseLong(request.getParameter("dataInicio")));
+		edicao.setDataFim(Long.parseLong(request.getParameter("dataFinal")));
 		edicao.setCidadeSede(request.getParameter("cidade"));
 		edicao.setPaisSede(request.getParameter("pais"));
+		edicao.setEvento(eventoDao.buscaEventoPorId(Integer.parseInt(request.getParameter("idEvento"))));
+
+		System.out.println(edicao.getAno());
 
 		dao.salvaEdicao(edicao);
 

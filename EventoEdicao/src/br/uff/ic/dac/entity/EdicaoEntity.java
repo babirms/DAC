@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -15,28 +16,26 @@ import javax.persistence.Table;
 public class EdicaoEntity implements Serializable {
 
 	private static final long serialVersionUID = -521534362773749203L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int edicaoId;
 	private int numero;
 	private int ano;
-	private Date dataInicio;
-	private Date dataFim;
+	private long dataInicio;
+	private long dataFim;
 	private String cidadeSede;
 	private String paisSede;
-	
+
 	@ManyToOne
+	@JoinColumn(name="eventoId", referencedColumnName="eventoId")
 	private EventoEntity evento;
-	
 
 	public EdicaoEntity() {
 	};
-	
-	
 
-	public EdicaoEntity(int edicaoId, int numero, int ano, Date dataInicio, Date dataFim, String cidadeSede,
-			String paisSede, EventoEntity evento) {
+	public EdicaoEntity(int edicaoId, int numero, int ano, long dataInicio, long dataFim, String cidadeSede,
+			String paisSede, int eventoId, EventoEntity evento) {
 		super();
 		this.edicaoId = edicaoId;
 		this.numero = numero;
@@ -45,77 +44,57 @@ public class EdicaoEntity implements Serializable {
 		this.dataFim = dataFim;
 		this.cidadeSede = cidadeSede;
 		this.paisSede = paisSede;
+
 		this.evento = evento;
 	}
-	
 
-	public Date getDataInicio() {
+	public long getDataInicio() {
 		return dataInicio;
 	}
 
-
-
-	public void setDataInicio(Date dataInicio) {
+	public void setDataInicio(long dataInicio) {
 		this.dataInicio = dataInicio;
 	}
 
-
-
-	public Date getDataFim() {
+	public long getDataFim() {
 		return dataFim;
 	}
 
-
-
-	public void setDataFim(Date dataFim) {
+	public void setDataFim(long dataFim) {
 		this.dataFim = dataFim;
 	}
-
-
 
 	public String getCidadeSede() {
 		return cidadeSede;
 	}
 
-
-
 	public void setCidadeSede(String cidadeSede) {
 		this.cidadeSede = cidadeSede;
 	}
-
-
 
 	public String getPaisSede() {
 		return paisSede;
 	}
 
-
-
 	public void setPaisSede(String paisSede) {
 		this.paisSede = paisSede;
 	}
-
-
 
 	public int getEdicaoId() {
 		return edicaoId;
 	}
 
-
 	public void setEdicaoId(int edicaoId) {
 		this.edicaoId = edicaoId;
 	}
-
 
 	public EventoEntity getEvento() {
 		return evento;
 	}
 
-
 	public void setEvento(EventoEntity evento) {
 		this.evento = evento;
 	}
-
 
 	public long getSerialversionuid() {
 		return serialVersionUID;

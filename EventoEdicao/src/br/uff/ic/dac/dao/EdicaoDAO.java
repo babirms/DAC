@@ -8,10 +8,11 @@ import br.uff.ic.dac.entity.EventoEntity;
 
 public class EdicaoDAO {
 	
-	private EntityManager em = JPAUtil.getEM();
-	private EntityTransaction et = em.getTransaction();
+	private EntityManager em ;
 
 	public void salvaEdicao(EdicaoEntity edicao) {
+		em = JPAUtil.getEM();
+		EntityTransaction et = em.getTransaction();
 		et.begin();
 		em.persist(edicao);
 		et.commit();
@@ -41,6 +42,8 @@ public class EdicaoDAO {
 	}*/
 
 	public EdicaoEntity buscaEdicaoPorId(int edicao_id) {
+		em = JPAUtil.getEM();
+		EntityTransaction et = em.getTransaction();
 		et.begin();
 		EdicaoEntity edicao = em.find(EdicaoEntity.class, edicao_id);
 		et.commit();

@@ -55,4 +55,15 @@ public class EventoDAO {
 		em.close();
 		return evento;
 	}
+	
+	public EventoEntity mergeOperation(int evento_id) {
+		EventoEntity evento = this.buscaEventoPorId(evento_id);
+		em = JPAUtil.getEM();
+		EntityTransaction et = em.getTransaction();
+		et.begin();
+		EventoEntity eventoMerge = em.merge(evento);
+		et.commit();
+		em.close();
+		return eventoMerge;
+	}
 }

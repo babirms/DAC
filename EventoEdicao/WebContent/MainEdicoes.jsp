@@ -31,6 +31,11 @@
 						data-parent="#accordionExample">
 						<div class="card-body">
 							<form action="RegistrarEdicaoServlet" method="post">
+							<div class="form-group">
+									<label for="idEvento">Insira o id do Evento: </label> <input
+										type="number" class="form-control" name="idEvento" id="idEvento"
+										required>
+								</div>
 								<div class="form-group">
 									<label for="num">Insira o número da Edição: </label> <input
 										type="number" class="form-control" name="num" id="num"
@@ -42,11 +47,11 @@
 										required>
 								</div>
 								<div class="form-group">
-									<label for="dataInicio">Insira a Data de Início: </label> <input type="date" id="dataInicio"
+									<label for="dataInicio">Insira a Data de Início: </label> <input type="number" id="dataInicio"
 										class="form-control" name="dataInicio" required>
 								</div>
 								<div class="form-group">
-									<label for="dataFinal">Insira a Data de Fim:</label> <input type="date" id="dataFinal"
+									<label for="dataFinal">Insira a Data de Fim:</label> <input type="number" id="dataFinal"
 										class="form-control" name="dataFinal" required>
 								</div>
 								
