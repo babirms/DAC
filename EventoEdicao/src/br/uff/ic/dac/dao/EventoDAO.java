@@ -56,8 +56,7 @@ public class EventoDAO {
 		return evento;
 	}
 	
-	public EventoEntity mergeOperation(int evento_id) {
-		EventoEntity evento = this.buscaEventoPorId(evento_id);
+	public EventoEntity merge(EventoEntity evento) {
 		em = JPAUtil.getEM();
 		EntityTransaction et = em.getTransaction();
 		et.begin();
@@ -66,4 +65,5 @@ public class EventoDAO {
 		em.close();
 		return eventoMerge;
 	}
+	
 }

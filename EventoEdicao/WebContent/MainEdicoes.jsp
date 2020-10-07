@@ -107,7 +107,7 @@
 								<div class="form-group">
 									<label for="idEdicaoEditar">Insira o id da Edição a ser
 										alterada: </label> <input type="text" class="form-control"
-										name="idEventoEditar" id="idEventoEditar">
+										name="idEdicaoEditar" id="idEdicaoEditar">
 
 								<div class="form-group">
 									<label for="num">Insira o novo número da Edição: </label> <input
@@ -120,11 +120,11 @@
 										required>
 								</div>
 								<div class="form-group">
-									<label for="dataInicio">Insira a nova Data de Início: </label> <input type="date" id="dataInicio"
+									<label for="dataInicio">Insira a nova Data de Início: </label> <input type="number" id="dataInicio"
 										class="form-control" name="dataInicio" required>
 								</div>
 								<div class="form-group">
-									<label for="dataFinal">Insira a nova Data de Fim:</label> <input type="date" id="dataFinal"
+									<label for="dataFinal">Insira a nova Data de Fim:</label> <input type="number" id="dataFinal"
 										class="form-control" name="dataFinal" required>
 								</div>
 								

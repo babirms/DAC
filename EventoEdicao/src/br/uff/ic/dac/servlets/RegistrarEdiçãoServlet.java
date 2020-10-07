@@ -54,6 +54,7 @@ public class RegistrarEdiçãoServlet extends HttpServlet {
 		EventoDAO eventoDao = new EventoDAO();
 
 		EdicaoEntity edicao = new EdicaoEntity();
+		
 		edicao.setNumero(Integer.parseInt(request.getParameter("num")));
 		edicao.setAno(Integer.parseInt(request.getParameter("ano")));
 		edicao.setDataInicio(Long.parseLong(request.getParameter("dataInicio")));
@@ -61,8 +62,6 @@ public class RegistrarEdiçãoServlet extends HttpServlet {
 		edicao.setCidadeSede(request.getParameter("cidade"));
 		edicao.setPaisSede(request.getParameter("pais"));
 		edicao.setEvento(eventoDao.buscaEventoPorId(Integer.parseInt(request.getParameter("idEvento"))));
-
-		System.out.println(edicao.getAno());
 
 		dao.salvaEdicao(edicao);
 

@@ -50,5 +50,17 @@ public class EdicaoDAO {
 		em.close();
 		return edicao;
 	}
+	
+	public EdicaoEntity merge(EdicaoEntity edicao) {
+		em = JPAUtil.getEM();
+		EntityTransaction et = em.getTransaction();
+		et.begin();
+		EdicaoEntity edicaoMerge = em.merge(edicao);
+		et.commit();
+		em.close();
+		return edicaoMerge;
+	}
+	
+	
 
 }
